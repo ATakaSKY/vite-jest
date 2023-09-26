@@ -1,15 +1,21 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Counter from "./Counter";
 
 function App() {
+  const getUser = () => {
+    fetch("/user")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
 
         <Counter />
+
+        <button onClick={getUser}>Get user</button>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>

@@ -3,10 +3,18 @@ import { useState } from "react";
 const Counter = () => {
   const [count, setCount] = useState(0);
 
+  const counterClicked = () => {
+    fetch("/login", { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
+    setCount((count) => count + 1);
+  };
+
   return (
     <>
       <p>
-        <button type="button" onClick={() => setCount((count) => count + 1)}>
+        <button type="button" onClick={counterClicked}>
           count is: {count}
         </button>
       </p>
