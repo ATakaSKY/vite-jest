@@ -10,17 +10,21 @@
     "preview": "vite preview",
     "test": "jest",
     "code-coverage": "jest --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:e2e": "playwright test --ui",
+		"test:e2e:report": "playwright show-report"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.39.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.2",
+    "@types/node": "^20.8.6",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",

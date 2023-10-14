@@ -223,3 +223,8 @@ Steps:
     exit 0
 
   ```
+
+## Setup playwright
+
+Simple follow this https://playwright.dev/docs/intro. It basically mentions to run this command:
+`npm init playwright@latest`. This sets up the entire config and basic test cases to get up and running here.
