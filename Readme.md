@@ -173,3 +173,53 @@ describe('Test App component', () => {
 ## Adding msw for mocking
 
 Visit https://mswjs.io/docs/getting-started, steps are straightforward.
+
+## Setup husky, lint staged
+
+Steps:
+
+- npx husky-init && npm install
+- npm install --save-dev lint-staged
+- create .prettierrc.json to format with lint-staged
+  ```
+    {
+    "bracketSpacing": true,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 100,
+    "tabWidth": 2
+  }
+  ```
+- add lint-staged command in package.json
+  ```
+    "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npx eslint --fix",
+      "npx prettier --write"
+    ]
+  }
+  ```
+- configure pre-commit. Sample config:
+
+  ```
+  #!/usr/bin/env sh
+  . "$(dirname -- "$0")/\_/husky.sh"
+
+    npx lint-staged
+
+    local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+    valid*branch_regex="^(feature|bugfix|improvement|library|setup|release|hotfix)\/[a-z0-9.*-]+$"
+
+    message="There is something wrong with your branch name. Branch names in this project must adhere to this contract: $valid_branch_regex. Your commit will be rejected. You should rename your branch to a valid name and try again."
+
+    if [[! $local_branch =~ $valid_branch_regex && $local_branch != "main"]]
+    then
+    echo "$message"
+    exit 1
+    fi
+
+    exit 0
+
+  ```

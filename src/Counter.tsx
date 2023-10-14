@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   const counterClicked = () => {
-    fetch("/login", { method: "POST" })
+    fetch('/login', { method: 'POST' })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data))
 
-    setCount((count) => count + 1);
-  };
+    setCount((count) => count + 1)
+  }
+
+  console.log('testing branch name 2')
 
   return (
     <>
@@ -24,7 +26,7 @@ const Counter = () => {
         </p>
       ) : null}
     </>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter
