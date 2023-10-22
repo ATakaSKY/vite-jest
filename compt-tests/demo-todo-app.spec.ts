@@ -26,6 +26,8 @@ test.describe('New Todo', () => {
     await expect(page.getByTestId('todo-title')).toHaveText([TODO_ITEMS[0], TODO_ITEMS[1]])
 
     await checkNumberOfTodosInLocalStorage(page, 2)
+
+    await expect(page).toHaveScreenshot('add-todo-items.png')
   })
 
   test('should clear text input field when an item is added', async ({ page }) => {
