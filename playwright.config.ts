@@ -11,7 +11,9 @@ import { defineConfig, devices } from '@playwright/test'
  */
 export default defineConfig({
   testDir: './compt-tests',
-  snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{arg}{ext}',
+  // snapshotPathTemplate: 'compt-tests-snapshots/{testFilePath}/{arg}{ext}',
+  // outputDir: 'compt-tests-results/',
+  snapshotDir: 'compt-tests-snapshots', // snapshots to push to github
   // snapshotDir: './test-results',
   /* Run tests in files in parallel */
   fullyParallel: true,
