@@ -79,6 +79,8 @@ test.describe('Mark all as completed', () => {
     // Ensure all todos have 'completed' class.
     await expect(page.getByTestId('todo-item')).toHaveClass(['completed', 'completed', 'completed'])
     await checkNumberOfCompletedTodosInLocalStorage(page, 3)
+
+    await expect(page).toHaveScreenshot('todos-completed.png')
   })
 
   test('should allow me to clear the complete state of all items', async ({ page }) => {
