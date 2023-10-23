@@ -20,6 +20,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: compt-tests
-          path: compt-tests/
+          name: compt-tests-snapshots
+          path: compt-tests-snapshots/
           retention-days: 30
