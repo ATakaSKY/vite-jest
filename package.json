@@ -14,10 +14,12 @@
     "e2e": "npx playwright test",
     "e2e:update": "npm run e2e --update-snapshots",
     "e2e:ui": "playwright test --ui",
-		"e2e:report": "playwright show-report",
+    "e2e:report": "playwright show-report",
     "e2e:ui:update-baseline": "docker run --ipc=host --rm -v $(pwd):/work/ -w /work/ -it --env TEST_PATH=\"${TEST_PATH}\" --env NODE_OPTIONS=--openssl-legacy-provider mcr.microsoft.com/playwright:v1.39.0-jammy npm run e2e:update"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.6",
+    "graphql": "^16.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
