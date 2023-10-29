@@ -228,3 +228,7 @@ Steps:
 
 Simple follow this https://playwright.dev/docs/intro. It basically mentions to run this command:
 `npm init playwright@latest`. This sets up the entire config and basic test cases to get up and running here.
+
+## Setup graphql codegen
+
+Follow this guide: https://github.com/ATakaSKY/vite-graphql-codegen/blob/main/README.md to setup code generation for graphql schemas

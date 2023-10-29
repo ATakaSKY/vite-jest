@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client'
+import { Dog } from '../../gql/graphql'
 
 const GET_DOGS = gql`
   query GetDogs {
@@ -8,11 +9,6 @@ const GET_DOGS = gql`
     }
   }
 `
-
-type Dog = {
-  id: string
-  breed: string
-}
 
 export function Dogs({
   onDogSelected,

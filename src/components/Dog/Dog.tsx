@@ -1,4 +1,5 @@
 import { gql, useQuery, useLazyQuery } from '@apollo/client'
+import { Dog } from '../../gql/graphql'
 
 const GET_DOG_PHOTO = gql`
   query dog($breed: String!) {
@@ -25,7 +26,7 @@ export function DelayedDogQuery() {
   )
 }
 
-export function DogPhoto({ breed }: { breed: string }) {
+export function DogPhoto({ breed }: Pick<Dog, 'breed'>) {
   const { loading, error, data, refetch, networkStatus } = useQuery(GET_DOG_PHOTO, {
     variables: { breed },
     notifyOnNetworkStatusChange: true,
