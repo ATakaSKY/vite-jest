@@ -9,7 +9,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-if (process.env.NODE_ENV === 'development') {
+if (import.meta.env.VITE_MSW === 'false') {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   // eslint-disable-next-line @typescript-eslint/no-var-requires
