@@ -229,13 +229,16 @@ Steps:
 Simple follow this https://playwright.dev/docs/intro. It basically mentions to run this command:
 `npm init playwright@latest`. This sets up the entire config and basic test cases to get up and running here.
 
+## Setup graphql codegen
+
+Follow this guide: https://github.com/ATakaSKY/vite-graphql-codegen/blob/main/README.md to setup code generation for graphql schemas
 
 ## Release Please
 
 release-please is a tool for organizing releases by updating changelogs and bumping package versions and creating tags to maintain history as well. It does all this by parsing the commit messages, looking for https://www.conventionalcommits.org/ and and creating release PRs.
 
 Follow these steps to onboard repo to release-please:
+
 - Create a github token under Personal tokens
 - https://github.com/googleapis/release-please/blob/main/docs/cli.md#bootstrapping - Run the command to create release-please setup PR against target branch. Use token from first step
 - https://github.com/google-github-actions/release-please-action - Add this github action to automate generation of release PRs. Make sure to allow github pull/push request to github actions under settings otherwise this action might fail to create a PR
-   
